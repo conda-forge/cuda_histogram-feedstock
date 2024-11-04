@@ -187,6 +187,3 @@ Feedstock Maintainers
 
 * [@Saransh-cpp](https://github.com/Saransh-cpp/)
 
-
-<!-- dummy commit to enable rerendering -->
-
