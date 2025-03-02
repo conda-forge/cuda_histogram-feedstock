@@ -17,7 +17,7 @@ build:
   number: 2
   # linux-ppc64le is not supported by CuPy on Python 3.13
   # https://github.com/conda-forge/cupy-feedstock/issues/299
-  skip: True  # [ppc64le and py>312]
+  skip: True  # [win or osx or (ppc64le and py>312)]
 
 requirements:
   host:
