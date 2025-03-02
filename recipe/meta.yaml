@@ -1,5 +1,5 @@
 {% set name = "cuda_histogram" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,17 +7,17 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a3672c474dd094e2fefd364757d8fb6aa016af6e2ffee356e2a9a78c88f58690
+  sha256: 3089502c63f7fc1e26a81ca7f5a307ad14c01101f35b91b92dc2a56ef4a4bf38
   patches:
     # Patch `pyproject.toml`'s requirement on `cupy-cuda12x` to `cupy` to fix `pip check`
     - cupy.patch
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 2
+  number: 0
   # linux-ppc64le is not supported by CuPy on Python 3.13
   # https://github.com/conda-forge/cupy-feedstock/issues/299
-  skip: True  # [win or osx or (ppc64le and py>312)]
+  skip: true  # [win or osx or (ppc64le and py>312)]
 
 requirements:
   host:
