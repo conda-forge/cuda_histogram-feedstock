@@ -11,9 +11,6 @@ package:
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
   sha256: 3f99db39407be0538ad4159789f5e6944e3e705d3f878f4f4eb61fdca5ff808d
-  patches:
-    # Patch `pyproject.toml`'s requirement on `cupy-cuda12x` to `cupy` to fix `pip check`
-    - cupy.patch
 
 build:
   # linux-ppc64le is not supported by CuPy on Python 3.13
@@ -31,9 +28,8 @@ requirements:
   run:
     - python
     - awkward >=2.6.3
-    - cupy >=13.1.0
+    - cupy >=13.6.0
     - numpy >=1.22.0
-    - scipy >=1.1.0
     - hist >=2
     - boost-histogram
 
