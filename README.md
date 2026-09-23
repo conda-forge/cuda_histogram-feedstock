@@ -15,7 +15,14 @@ Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>GitHub Actions</td>
+    <td>
+      <a href="https://github.com/conda-forge/cuda_histogram-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/cuda_histogram-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
+    </td>
+  </tr>
 </table>
 
 Current release info
@@ -35,31 +42,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `cuda_histogram` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install cuda_histogram
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install cuda_histogram
 ```
 
-It is possible to list all of the versions of `cuda_histogram` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add cuda_histogram
+# for installing globally
+pixi global install cuda_histogram
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `cuda_histogram` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search cuda_histogram --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search cuda_histogram --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search cuda_histogram --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -71,6 +120,8 @@ mamba repoquery whoneeds cuda_histogram --channel conda-forge
 # List dependencies of `cuda_histogram`:
 mamba repoquery depends cuda_histogram --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
